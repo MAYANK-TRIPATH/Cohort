@@ -1,3 +1,8 @@
+// Here we learn about authentication using Zod liberary
+// we make zod schema also
+// TODO -> Get comfotable with Zod lib.(Docs) 
+
+
 const express = require("express");
 const zod = require("zod");
 const app = express();
