@@ -12,7 +12,13 @@ function App() {
     <>
       <div>
         <CreateTodo/>
-        <Todos/>
+        <Todos todos={[
+          {
+          title: "ad",
+          description: "sadfsdf",
+          Completed: false
+          }
+        ]}></Todos>
       </div>
     </>
   )
