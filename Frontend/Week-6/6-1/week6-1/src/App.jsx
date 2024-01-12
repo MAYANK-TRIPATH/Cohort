@@ -1,5 +1,5 @@
-import React, {Fragment} from "react";
-import { useState } from "react";
+// import React, {Fragment} from "react";
+// import { useState } from "react";
 
 // function App() {
 
@@ -33,47 +33,68 @@ import { useState } from "react";
 
 // -----------KEYS IN REACT-----------------------
 
-let counter = 4;
+// let counter = 4;
 
-function App() {
-  const [todos, setTodos] = useState([{
-    id: 1,
-    title: "go to gym",
-    description: "Go fast"
-  },{
-    id: 2,
-    title: "go to job",
-    description: "EArn money"
-  },{
-    id: 3,
-    title: "Have fun",
-    description: "Enjoy"
-  }])
-  function addTodo() {
-    setTodos([...todos, {
-      id: counter++,
-      title: Math.random(),
-      description: Math.random()
-    }])
-    }
+// function App() {
+//   const [todos, setTodos] = useState([{
+//     id: 1,
+//     title: "go to gym",
+//     description: "Go fast"
+//   },{
+//     id: 2,
+//     title: "go to job",
+//     description: "EArn money"
+//   },{
+//     id: 3,
+//     title: "Have fun",
+//     description: "Enjoy"
+//   }])
+//   function addTodo() {
+//     setTodos([...todos, {
+//       id: counter++,
+//       title: Math.random(),
+//       description: Math.random()
+//     }])
+//     }
   
 
-  return (
-    <div>
-      <button onClick={addTodo}>Add a todo</button>
-      {todos.map(todo => <Todo key={todo.id} title={todo.title} description={todo.description} />)}
-    </div>
-  )
+//   return (
+//     <div>
+//       <button onClick={addTodo}>Add a todo</button>
+//       {todos.map(todo => <Todo key={todo.id} title={todo.title} description={todo.description} />)}
+//     </div>
+//   )
+// }
+
+// function Todo({title, description}) {
+//   return <div>
+//     <h1>
+//       {title}
+//     </h1>
+//     <h3>
+//       {description}
+//     </h3>
+//   </div>
+// }
+
+
+//-----------------Wrapper--------------------------------------
+
+function App() {
+  return <div>
+  <CardWrapper innerComponenet={TextComponent} />
+  </div>
 }
 
-function Todo({title, description}) {
+function TextComponent() {
   return <div>
-    <h1>
-      {title}
-    </h1>
-    <h3>
-      {description}
-    </h3>
+    hi there
+  </div>
+}
+
+function CardWrapper({children}) {
+  return <div style={{border: "2px solid black", padding: 20}}>
+    {children}
   </div>
 }
 
